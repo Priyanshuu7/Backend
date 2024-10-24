@@ -15,4 +15,4 @@ fs.readFile("contacts.txt", "utf8", (err, data) => {
     console.log(data);
   }
 });
-// you can also unlink and copy flies and also  o you can seee statics//
+// you can also unlink and copy flies and also  o you can seee statics you can even create folders//

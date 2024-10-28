@@ -63,7 +63,7 @@ app.delete("/api/users/:id", (req, res) => {
   users.splice(index, 1);
   fs.writeFile("MOCK_DATA.json", JSON.stringify(users), (err, data) => {
     return res.json({
-      Status: "Success",
+      Status: "Successss",
       message: `User with ID ${id} deleted`,
       id: id,
     });

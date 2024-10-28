@@ -7,6 +7,21 @@ const fs = require("fs");
 // Middleware //
 app.use(express.urlencoded({ extended: false }));
 
+app.use((req, res, next) => {
+  fs.appendFile(
+    "log.txt",
+    `${Date.now()}: ${req.method}: ${req.path}\n`,
+    (err, data) => {
+      next();
+    }
+  );
+});
+
+app.use((req, res, next) => {
+  console.log("Hello from middleware 2");
+  next();
+});
+
 // Route all see all the users //
 app.get("/api/users", (req, res) => {
   return res.json(users);

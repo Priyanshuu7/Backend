@@ -38,21 +38,37 @@ app.get("/api/users", (req, res) => {
 // });
 
 //Grouping the routes //
-app
-  .route("/api/users/:id")
-  .get((req, res) => {
-    const id = Number(req.params.id);
-    const user = users.find((user) => user.id === id);
-    return res.json(user);
-  })
-  .patch((req, res) => {
-    //todo//
-    return res.json({ Status: "pending" });
-  })
-  .delete((req, res) => {
-    //todo//
-    return res.json({ Status: "pending" });
+app.route("/api/users/:id").get((req, res) => {
+  const id = Number(req.params.id);
+  const user = users.find((user) => user.id === id);
+  return res.json(user);
+});
+
+app.patch("/api/users/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const body = req.body;
+  const user = users.find((user) => user.id === id);
+  const index = users.indexOf(user);
+  users[index] = { ...user, ...body };
+
+  fs.writeFile("MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+    return res.json({ Status: "Success", id: id });
   });
+});
+
+app.delete("/api/users/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const user = users.find((user) => user.id === id);
+  const index = users.indexOf(user);
+  users.splice(index, 1);
+  fs.writeFile("MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+    return res.json({
+      Status: "Success",
+      message: `User with ID ${id} deleted`,
+      id: id,
+    });
+  });
+});
 
 app.post("/api/users", (req, res) => {
   const body = req.body;

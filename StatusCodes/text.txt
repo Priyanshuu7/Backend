@@ -1,0 +1,41 @@
+Introduction to Status Codes::
+-->Status codes are standardized codes that indicate the result of an HTTP request. They help in understanding whether a request was successful, resulted in an error, or requires further action. For example, the code 404 means "Not Found," indicating that the requested resource does not exist .
+
+Types of HTTP Status Codes:::
+
+Informational Responses (1xx):
+-->Codes starting with 1 indicate that the request was received and understood. For example, 100 Continue .
+
+
+Successful Responses (2xx)
+-->Codes starting with 2 indicate that the request was successfully received, understood, and accepted.
+-->200 OK: The request was successful .
+-->201 Created: The request was successful, and a new resource was created .
+
+
+Redirection Messages (3xx)
+-->Codes starting with 3 indicate that further action is needed to fulfill the request.
+-->301 Moved Permanently: The resource has been moved to a new URL .
+
+
+Client Error Responses (4xx)
+-->Codes starting with 4 indicate that there was an error with the request from the client.
+-->400 Bad Request: The request could not be understood due to malformed syntax .
+-->401 Unauthorized: Authentication is required and has failed or has not yet been provided .
+-->404 Not Found: The requested resource could not be found .
+
+
+Server Error Responses (5xx)
+-->Codes starting with 5 indicate that the server failed to fulfill a valid request.
+-->500 Internal Server Error: A generic error message indicating that the server encountered an unexpected condition .
+-->503 Service Unavailable: The server is currently unable to handle the request due to temporary overload or maintenance .
+
+
+
+Best Practices for Using Status Codes
+-->Always return the appropriate status code based on the outcome of the request to provide clear feedback to the client.
+-->For successful resource creation, use 201 Created instead of 200 OK to indicate that a new resource has been created .
+-->Use 404 Not Found for invalid URLs and 400 Bad Request for requests missing required data .
+
+Conclusion:
+-->Understanding HTTP status codes is crucial for effective web communication and troubleshooting. By using the correct codes, developers can enhance user experience and facilitate easier debugging of web applications.

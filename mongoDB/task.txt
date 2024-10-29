@@ -1,0 +1,12 @@
+// Restfull api creatrte krenge//
+
+//GET/api/users - lost all the users//
+
+//GET/api/users/1- get user with id 1
+//GET/api/usrs/2 - get user with id 2
+
+//POST/api/users- create new user//
+
+//PATCH/api/users/1 -edit the user wiht id one 
+
+//DELETE/api/users/1- delte the uder with id 2

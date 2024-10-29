@@ -1,2 +1,3 @@
 1730141832827: GET: /api/users
 1730141853082: PATCH: /api/users/503
+1730178492573: GET: /api/users/102: ::1

@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   fs.appendFile(
     "log.txt",
-    `${Date.now()}: ${req.method}: ${req.path}\n`,
+    `${Date.now()}: ${req.method}: ${req.path}: ${req.ip}\n`,
     (err, data) => {
       next();
     }

@@ -1,0 +1,70 @@
+## Model View Controller (MVC) in NodeJS: Study Guide
+
+**What is MVC?**
+
+MVC is a design pattern that separates the application's concerns into three distinct components:
+
+* **Model:** Represents the data and logic of the application.  
+* **View:** Responsible for displaying the data to the user.  
+* **Controller:** Handles user input, interacts with the model, and decides which view to render.  
+
+**Why use MVC?**
+
+* **Improved Maintainability:** Separating concerns makes the code easier to understand, modify, and debug. 
+* **Scalability:** MVC allows for easier expansion of the application as it grows. 
+* **Reusability:** Components can be reused in different parts of the application or even in other projects. 
+
+**Implementing MVC in NodeJS**
+
+1. **Create Folders:** Organize your project with folders for `models`, `controllers`, `routes`, and `views`. 
+2. **Model:** Create a separate file for each model, containing the data schema and logic. 
+3. **Routes:** Define the routes for your application, mapping URLs to specific controllers. 
+4. **Controllers:** Create separate files for each controller, handling user requests and interacting with the model. 
+
+**Example: User Management**
+
+* **Model (user.js):**
+    ```javascript
+    const mongoose = require('mongoose');
+
+    const userSchema = new mongoose.Schema({
+        name: String,
+        email: String
+    });
+
+    module.exports = mongoose.model('User', userSchema);
+    ```
+* **Controller (userController.js):**
+    ```javascript
+    const User = require('../models/user');
+
+    const handleGetAllUsers = async (req, res) => {
+        const users = await User.find();
+        res.json(users);
+    };
+
+    module.exports = { handleGetAllUsers };
+    ```
+* **Route (routes/user.js):**
+    ```javascript
+    const express = require('express');
+    const router = express.Router();
+    const userController = require('../controllers/userController');
+
+    router.get('/', userController.handleGetAllUsers);
+
+    module.exports = router;
+    ```
+
+**Key Points**
+
+* The `index.js` file acts as the main entry point for the application. 
+* Use middleware to handle logging, authentication, and other common tasks. 
+* Connect to your database in a separate file for better organization. 
+* MVC promotes a clean and modular code structure, making your application easier to manage and scale. 
+
+**Remember:**
+
+* Use descriptive names for your files and functions. 
+* Follow best practices for code organization and documentation. 
+* Test your code thoroughly to ensure it works as expected. 

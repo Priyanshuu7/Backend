@@ -1,0 +1,37 @@
+HTTP Methods Overview:::
+Introduction to HTTP Methods::
+-->HTTP methods are used to perform actions on resources on a server. 
+-->The primary methods include GET, POST, PUT, PATCH, and DELETE .
+
+1.GET Method::
+-->Definition: The GET method is used to retrieve data from a server. 
+-->It is the default method used by web browsers when a URL is entered.
+Example: When a user enters a URL like youtube.com/search, the browser sends a GET request to fetch data from the server .
+Expectation: When a GET request is made, the expectation is to receive data in response.
+
+
+2.POST Method::
+-->Definition: The POST method is used to send data to the server, often resulting in a change in the server's state or side effects on the server.
+-->Use Case: Commonly used in forms where users submit data, such as signing up or logging in.
+Example: When a user fills out a sign-up form and submits it, a POST request is created to send the data to the server .
+
+
+3.PUT Method::
+-->Definition: The PUT method is used to update existing resources or create a new resource if it does not exist .
+-->Use Case: Typically used for file uploads or updating user information, such as changing a profile picture .
+
+
+4. PATCH Method::
+-->Definition: The PATCH method is used to apply partial modifications to a resource .
+-->Use Case: Useful when only specific fields of a resource need to be updated, rather than replacing the entire resource .
+
+
+5. DELETE Method::
+
+-->Definition: The DELETE method is used to remove a resource from the server .
+-->Use Case: Commonly used for actions like deleting user accounts or removing items from a shopping cart .
+
+
+Conclusion::
+-->Common Usage: The most commonly used methods are GET and POST, with GET for retrieving data and POST for sending data to the server .
+-->Handling Requests: In practical applications, handling these methods can be managed using frameworks like Express, which simplifies the process of routing and managing requests 

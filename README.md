@@ -61,10 +61,6 @@ Ensure you have the following installed:
 
 ## Directories Overview
 
-### .idea
-
-Contains project-specific settings. No direct interaction needed.
-
 ----------
 
 ### Express
@@ -73,11 +69,9 @@ This directory demonstrates the use of Express.js for building web applications.
 
 #### Sample Code:
 
-javascript
+```javascript
 
-Copy code
-
-`const express = require('express');
+const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
@@ -86,7 +80,7 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
-});` 
+});```
 
 ----------
 
